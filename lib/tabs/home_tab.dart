@@ -6,6 +6,7 @@ import 'package:transparent_image/transparent_image.dart';
 class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     Widget _buidBodyBack() => Container(//add degrade
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [

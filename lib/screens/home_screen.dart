@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_flutter/tabs/home_tab.dart';
+import 'package:store_flutter/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -11,7 +12,10 @@ class HomeScreen extends StatelessWidget {
       controller: _pageController, //add controler
       physics: NeverScrollableScrollPhysics(), //desabilitando a opção de arrastar entre as telas
       children: [
-        HomeTab()
+        Scaffold(
+          body: HomeTab(),
+          drawer: CustomDrawer(),
+        )
       ],
     );
   }
