@@ -4,7 +4,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Widget _buidDrawerBack() => Container(//add degrade
+    Widget _buildDrawerBack() => Container(//add degrade
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
             Color.fromARGB(255, 203, 236, 241),
@@ -16,7 +16,54 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: Stack(
         children: [
-          _buidDrawerBack()
+          _buildDrawerBack(),
+          ListView( //definindo a lista do drawer
+            padding: EdgeInsets.only(left: 32.0, top: 16.0),
+            children: [
+              Container( // titulo + "olá usuário)
+                margin: EdgeInsets.only(bottom: 8.0),
+                padding: EdgeInsets.fromLTRB(0.0, 16.0, 16.0, 8.0),
+                height: 170.0,
+                child: Stack( //utilizado para facilitar no posicionamento dos textos
+                  children: [
+                    Positioned(
+                        top: 8.0,
+                        left: 0.0,
+                        child: Text("Flutter's\nStore",
+                          style: TextStyle(
+                              fontSize: 34.0, fontWeight: FontWeight.bold),
+                        ),
+                    ),
+                    Positioned(
+                        top: 0.0,
+                        left: 0.0,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Olá, ",
+                              style: TextStyle(
+                                  fontSize: 18.0, fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            GestureDetector(
+                              child: Text("Entre ou cadastre-se",
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 16.0, fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              onTap: () {
+
+                              },
+                            )
+                          ],
+                        )
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
