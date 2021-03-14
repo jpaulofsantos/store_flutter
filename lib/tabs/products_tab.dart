@@ -23,7 +23,6 @@ class ProductsTab extends StatelessWidget {
               children: dividedTiles
             );
           }
-
         }
     );
   }

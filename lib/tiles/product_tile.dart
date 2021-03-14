@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store_flutter/datas/product_data.dart';
+import 'package:store_flutter/screens/category_screen.dart';
+import 'package:store_flutter/screens/product_screen.dart';
 
 class ProductTile extends StatelessWidget {
 
@@ -12,6 +14,11 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell( //ao tocar cria uma pequena anição, é semelhante ao gesture detector
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => ProductScreen(productData))          
+        );
+      },
       child: Card(
         child: type == "grid" ? //se for Grid, insere uma coluna, se for list, insere uma linha
         Column(

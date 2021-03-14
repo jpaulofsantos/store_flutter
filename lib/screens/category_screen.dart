@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:store_flutter/datas/product_data.dart';
 import 'package:store_flutter/tiles/product_tile.dart';
 
-class ProductScreen extends StatelessWidget {
+class CategoryScreen extends StatelessWidget {
 
   final DocumentSnapshot snapshot; //documentsnap refere-se a uma fotografia de apenas um documento
 
-  ProductScreen(this.snapshot);
+  CategoryScreen(this.snapshot);
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:store_flutter/screens/products_screen.dart';
+import 'package:store_flutter/screens/category_screen.dart';
 
 class CategoryTile extends StatelessWidget {
 
@@ -20,7 +20,7 @@ class CategoryTile extends StatelessWidget {
       trailing: Icon(Icons.keyboard_arrow_right), //icone à direita de cada produto
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context)=> ProductScreen(snapshot))
+          MaterialPageRoute(builder: (context)=> CategoryScreen(snapshot))
         );
       },
     );
