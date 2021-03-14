@@ -18,7 +18,7 @@ class UserModel extends Model {
 
     _auth.createUserWithEmailAndPassword(email: userDataMap["email"], 
         password: pass).then((user) async {
-      firebaseUser == user;
+      firebaseUser = user;
 
       await _saveUserData(userDataMap);
 
@@ -26,6 +26,7 @@ class UserModel extends Model {
       isLoading = false;
       notifyListeners();
     }).catchError((e) {
+      print(e);
       onFail();
       isLoading = false;
       notifyListeners();
